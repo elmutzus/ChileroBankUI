@@ -4,6 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../environments/environment';
 import { Departamento } from './dto/Departmento';
 
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+
+
 const API_URI = environment.apiUrl;
 
 @Injectable()
@@ -15,6 +20,22 @@ export class DepartamentoService {
   }
 
   public getDepartments() {
-    return this.http.get<Departamento[]>(API_URI + '/banking/departamentos');
+    return this.http.get<Departamento[]>(API_URI + '/banking/departamentos')
+      .map((response: Departamento[]) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      })
+  }
+
+  public createDepartment(dept: Departamento) {
+    return this.http.post<Departamento>(API_URI + '/banking/departamentos', dept)
+      .map((response: Departamento) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      });
   }
 }

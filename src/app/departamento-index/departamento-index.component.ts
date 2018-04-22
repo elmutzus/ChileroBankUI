@@ -30,8 +30,6 @@ export class DepartamentoIndexComponent implements OnInit {
       .subscribe((data: Departamento[]) => {
         this.departments = data;
       });
-
-    console.log(this.departments);
   }
 
 }

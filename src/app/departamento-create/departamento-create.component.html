@@ -2,19 +2,18 @@
   <div class="panel-heading">
     {{ title }}
   </div>
+  <div *ngIf="errorMessage.length > 0">
+    <div class="text-danger">{{ errorMessage }}</div>
+  </div>
   <div class="panel-body">
     <form>
       <div class="form-group">
-        <label for="txtId">ID</label>
-        <input type="number" id="txtId" class="form-control" placeholder="Identificador" />
-      </div>
-      <div class="form-group">
         <label for="txtCode">Código</label>
-        <input type="number" id="txtCode" class="form-control" placeholder="Código" />
+        <input type="text" id="txtCode" class="form-control" placeholder="Código" (keyup)="onKeyUpCode($event);" />
       </div>
       <div class="form-group">
         <label for="txtName">Nombre</label>
-        <input type="text" id="txtName" class="form-control" placeholder="Nombre" />
+        <input type="text" id="txtName" class="form-control" placeholder="Nombre" (keyup)="onKeyUpName($event);" />
       </div>
     </form>
   </div>
@@ -22,7 +21,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="pull-right">
-          <button id="btnCreate" type="submit" class="btn btn-primary">Crear</button>
+          <button id="btnCreate" type="submit" class="btn btn-primary" (click)="btnCreateClick();">Crear</button>
         </div>
         <div class="pull-left">
           <button id="btnCancel" type="submit" class="btn btn-danger" (click)="btnCancelClick();">Cancelar</button>

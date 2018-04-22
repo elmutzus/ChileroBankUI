@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departamento-create',
@@ -9,9 +10,12 @@ export class DepartamentoCreateComponent implements OnInit {
 
   title = "Crear departamento";
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  btnCancelClick = function () {
+    this.router.navigateByUrl('/departamento');
+  };
 }

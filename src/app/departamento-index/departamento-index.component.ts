@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departamento-index',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartamentoIndexComponent implements OnInit {
 
-  constructor() { }
+  title = "Listado de departamentos";
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  btnCreateClick = function () {
+    this.router.navigateByUrl('/departamento/create');
+  };
 
 }

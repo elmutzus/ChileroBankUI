@@ -3,10 +3,20 @@
     {{title}}
   </div>
   <div class="panel-body">
-    <p>Looping with objects:</p>
-    <ul>
-      
-    </ul>
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Código</th>
+        <th>Nombre</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dept of departments">
+          <td>{{dept.id}}</td>
+          <td>{{dept.codigo}}</td>
+          <td>{{dept.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="panel-footer">
     <div class="row">

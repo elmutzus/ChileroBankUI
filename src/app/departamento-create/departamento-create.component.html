@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ title }}
+  </div>
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label for="txtId">ID</label>
+        <input type="number" id="txtId" class="form-control" placeholder="Identificador" />
+      </div>
+      <div class="form-group">
+        <label for="txtCode">Código</label>
+        <input type="number" id="txtCode" class="form-control" placeholder="Código" />
+      </div>
+      <div class="form-group">
+        <label for="txtName">Nombre</label>
+        <input type="text" id="txtName" class="form-control" placeholder="Nombre" />
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <button id="btnCreate" type="submit" class="btn btn-primary">Crear</button>
+        </div>
+        <div class="pull-left">
+          <button id="btnCancel" type="submit" class="btn btn-danger">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

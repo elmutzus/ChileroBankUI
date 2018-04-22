@@ -8,7 +8,8 @@ import { DepartamentoIndexComponent } from './departamento-index/departamento-in
 import { DepartamentoCreateComponent } from './departamento-create/departamento-create.component';
 import { DepartamentoEditComponent } from './departamento-edit/departamento-edit.component';
 import { appRoutes } from './routerConfig';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DepartamentoService } from './departamento.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,12 @@ import { appRoutes } from './routerConfig';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DepartamentoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

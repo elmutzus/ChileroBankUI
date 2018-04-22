@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DepartamentoService } from '../departamento.service';
 
 @Component({
   selector: 'app-departamento-index',
@@ -8,15 +9,22 @@ import { Router } from '@angular/router';
 })
 export class DepartamentoIndexComponent implements OnInit {
 
-  title = "Listado de departamentos";
+  private title = "Listado de departamentos";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private deptService: DepartamentoService) { }
 
   ngOnInit() {
+    this.loadDepartments();
   }
 
   btnCreateClick = function () {
     this.router.navigateByUrl('/departamento/create');
   };
+
+  loadDepartments(){
+    console.log('Call to load departments');
+    this.deptService.getDepartments();
+  }
 
 }

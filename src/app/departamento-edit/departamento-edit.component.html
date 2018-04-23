@@ -3,17 +3,23 @@
     {{ title }}
   </div>
   <div class="panel-body">
-    <div class="form-group">
-      <label for="txtId">Identificador</label>
-      <input type="number" id="txtId" class="form-control" placeholder="Identificador" [(ngModel)]="id" readonly="true" />
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="txtId">Identificador</label>
+        <input type="number" id="txtId" class="form-control" placeholder="Identificador" [(ngModel)]="id" readonly="true" />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="txtCode">Código</label>
-      <input type="text" id="txtCode" class="form-control" placeholder="Código" [(ngModel)]="code" />
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="txtCode">Código</label>
+        <input type="text" id="txtCode" class="form-control" placeholder="Código" [(ngModel)]="code" />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="txtName">Nombre</label>
-      <input type="text" id="txtName" class="form-control" placeholder="Nombre" [(ngModel)]="name" />
+    <div class="col-md-7">
+      <div class="form-group">
+        <label for="txtName">Nombre</label>
+        <input type="text" id="txtName" class="form-control" placeholder="Nombre" [(ngModel)]="name" />
+      </div>
     </div>
   </div>
   <div class="panel-footer">

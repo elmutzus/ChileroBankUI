@@ -3,14 +3,18 @@
     {{ title }}
   </div>
   <div class="panel-body">
+    <div class="col-md-5">
       <div class="form-group">
         <label for="txtCode">Código</label>
         <input type="text" id="txtCode" class="form-control" placeholder="Código" [(ngModel)]="code" required />
       </div>
+    </div>
+    <div class="col-md-7">
       <div class="form-group">
         <label for="txtName">Nombre</label>
         <input type="text" id="txtName" class="form-control" placeholder="Nombre" [(ngModel)]="name" required />
       </div>
+    </div>
   </div>
   <div class="panel-footer">
     <div class="row">

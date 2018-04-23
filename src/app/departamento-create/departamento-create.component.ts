@@ -21,14 +21,6 @@ export class DepartamentoCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  onKeyUpCode(event: any) {
-    this.code = event.target.value;
-  }
-
-  onKeyUpName(event: any) {
-    this.name = event.target.value;
-  }
-
   private goBack = function () {
     this.router.navigateByUrl('/departamento');
   }
@@ -47,8 +39,6 @@ export class DepartamentoCreateComponent implements OnInit {
       this.deptService.create(dept)
         .subscribe(
           (data: Departamento) => {
-            console.log(data);
-
             this.goBack();
           },
           (err) => {

@@ -24,4 +24,14 @@ export class TransaccionService {
         return Observable.throw(error);
       })
   }
+
+  public create(trx: Transaccion) {
+    return this.http.post<Transaccion>(API_URI + '/banking/transacciones', trx)
+      .map((response: Transaccion) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      });
+  }
 }

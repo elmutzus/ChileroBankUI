@@ -26,7 +26,7 @@ export const appRoutes: Routes = [
         component: TransaccionIndexComponent
     },
     {
-        path: 'transaccion/create',
+        path: 'transaccion/create/:id',
         component: TransaccionCreateComponent
     },
     {

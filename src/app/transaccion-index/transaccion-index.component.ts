@@ -32,10 +32,18 @@ export class TransaccionIndexComponent implements OnInit {
 
 
   btnCreateClick = function () {
-    this.router.navigateByUrl('/cuenta/create');
+    this.router.navigateByUrl('/transaccion/create/' + this.accountId);
   };
 
   btnCancelClick = function() {
+    this.goBack();
+  }
+
+  btnPayClick = function () {
+    this.goBack();
+  }
+
+  btnConsumeClick = function () {
     this.goBack();
   }
 

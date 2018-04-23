@@ -6,4 +6,5 @@ export class Transaccion {
     monto: number;
     montoFinal: number;
     operacion: Operacion;
+    cuenta: number;
 }

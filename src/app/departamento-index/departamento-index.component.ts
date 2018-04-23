@@ -28,19 +28,21 @@ export class DepartamentoIndexComponent implements OnInit {
   btnDeleteClick = function (id: number) {
     if (confirm("Desea eliminar el departamento " + id + "?")) {
       this.deptService.delete(id)
-        .subscribe((data: Departamento) => {
-          this.message = "Departamento " + data.id + " fue eliminado exitosamente";
-          this.loadDepartments();
-        })
+        .subscribe(
+          (data: Departamento) => {
+            this.message = "Departamento " + data.id + " fue eliminado exitosamente";
+            this.loadDepartments();
+          }, (err) => {
+            this.message = err.message;
+          });
     }
   }
 
   btnEditClick = function (id: number) {
-    console.log('Estoy editando:' + id);
+    this.router.navigateByUrl('/departamento/edit/' + id);
   }
 
   loadDepartments() {
-    console.log('Call to load departments');
     this.deptService.getAll()
       .subscribe((data: Departamento[]) => {
         this.departments = data;

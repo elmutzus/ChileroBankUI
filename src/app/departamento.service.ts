@@ -49,7 +49,7 @@ export class DepartamentoService {
       });
   }
 
-  public put(dept: Departamento) {
+  public update(dept: Departamento) {
     return this.http.put<Departamento>(API_URI + '/banking/departamentos', dept)
       .map((response: Departamento) => {
         return response;

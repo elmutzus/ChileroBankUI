@@ -16,8 +16,7 @@ export class DepartamentoCreateComponent implements OnInit {
   name: string;
   message: string = '';
 
-  constructor(private router: Router,
-    private deptService: DepartamentoService) { }
+  constructor(private router: Router, private deptService: DepartamentoService) { }
 
   ngOnInit() {
   }

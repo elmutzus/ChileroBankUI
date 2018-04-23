@@ -21,7 +21,8 @@ import { DepartamentoService } from './departamento.service';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     DepartamentoService

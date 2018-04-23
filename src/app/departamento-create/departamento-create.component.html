@@ -3,16 +3,14 @@
     {{ title }}
   </div>
   <div class="panel-body">
-    <form>
       <div class="form-group">
         <label for="txtCode">Código</label>
-        <input type="text" id="txtCode" class="form-control" placeholder="Código" (keyup)="onKeyUpCode($event);" required />
+        <input type="text" id="txtCode" class="form-control" placeholder="Código" [(ngModel)]="code" required />
       </div>
       <div class="form-group">
         <label for="txtName">Nombre</label>
-        <input type="text" id="txtName" class="form-control" placeholder="Nombre" (keyup)="onKeyUpName($event);" required />
+        <input type="text" id="txtName" class="form-control" placeholder="Nombre" [(ngModel)]="name" required />
       </div>
-    </form>
   </div>
   <div class="panel-footer">
     <div class="row">

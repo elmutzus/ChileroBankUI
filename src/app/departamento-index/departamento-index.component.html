@@ -8,12 +8,17 @@
         <th>Id</th>
         <th>Código</th>
         <th>Nombre</th>
+        <th></th>
       </thead>
       <tbody>
         <tr *ngFor="let dept of departments">
           <td>{{dept.id}}</td>
           <td>{{dept.codigo}}</td>
           <td>{{dept.nombre}}</td>
+          <td>
+            <button id="btnEdit" type="submit" class="btn btn-info" (click)="btnEditClick(dept.id);">Editar</button>
+            <button id="btnDelete" type="submit" class="btn btn-danger" (click)="btnDeleteClick(dept.id);">Eliminar</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -27,4 +32,7 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="message.length > 0">
+  <div class="text-danger">{{ message }}</div>
 </div>

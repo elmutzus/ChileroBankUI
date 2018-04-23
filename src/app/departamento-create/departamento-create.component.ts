@@ -14,7 +14,7 @@ export class DepartamentoCreateComponent implements OnInit {
 
   code: string;
   name: string;
-  errorMessage: string = '';
+  message: string = '';
 
   constructor(private router: Router,
     private deptService: DepartamentoService) { }
@@ -39,21 +39,23 @@ export class DepartamentoCreateComponent implements OnInit {
   };
 
   btnCreateClick = function () {
-    let dept = new Departamento;
+    if (confirm("Desea crear el nuevo departamento?")) {
+      let dept = new Departamento;
 
-    dept.codigo = this.code;
-    dept.nombre = this.name;
+      dept.codigo = this.code;
+      dept.nombre = this.name;
 
-    this.deptService.createDepartment(dept)
-      .subscribe(
-        (data: Departamento) => {
-          console.log(data);
+      this.deptService.create(dept)
+        .subscribe(
+          (data: Departamento) => {
+            console.log(data);
 
-          this.goBack();
-        },
-        (err) => {
-          console.log("ERROR:" + err.message);
-          this.errorMessage = err.message;
-        });
+            this.goBack();
+          },
+          (err) => {
+            console.log("ERROR:" + err.message);
+            this.message = err.message;
+          });
+    }
   }
 }

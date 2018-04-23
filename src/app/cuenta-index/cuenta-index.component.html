@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{title}}
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Moneda</th>
+        <th>Fecha apertura</th>
+        <th>Estado</th>
+        <th>Monto</th>
+        <th>Tipo cuenta</th>
+        <th>Cliente</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cnt of accounts">
+          <td>{{cnt.id}}</td>
+          <td>{{cnt.moneda}}</td>
+          <td>{{cnt.fechaApertura}}</td>
+          <td>{{cnt.estado}}</td>
+          <td>{{cnt.monto | currency}}</td>
+          <td>{{cnt.tipoCuenta.nombre}}</td>
+          <td>{{cnt.cliente.nombre}}</td>
+          <td>
+            <button id="btnEdit" type="submit" class="btn btn-info" (click)="btnEditClick(cnt.id);">Editar</button>
+            <button id="btnEdit" type="submit" class="btn btn-success" (click)="btnEditClick(cnt.id);">Transacciones</button>
+            <button id="btnDelete" type="submit" class="btn btn-danger" (click)="btnDeleteClick(cnt.id);">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <button id="btnCreate" type="submit" class="btn btn-primary" (click)="btnCreateClick();">Nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="message.length > 0">
+  <div class="text-danger">{{ message }}</div>
+</div>

@@ -10,13 +10,27 @@ import { DepartamentoEditComponent } from './departamento-edit/departamento-edit
 import { appRoutes } from './routerConfig';
 import { HttpClientModule } from '@angular/common/http';
 import { DepartamentoService } from './departamento.service';
+import { CuentaIndexComponent } from './cuenta-index/cuenta-index.component';
+import { CuentaEditComponent } from './cuenta-edit/cuenta-edit.component';
+import { CuentaCreateComponent } from './cuenta-create/cuenta-create.component';
+import { TransaccionIndexComponent } from './transaccion-index/transaccion-index.component';
+import { TransaccionEditComponent } from './transaccion-edit/transaccion-edit.component';
+import { TransaccionCreateComponent } from './transaccion-create/transaccion-create.component';
+import { CuentaService } from './cuenta.service';
+import { TransaccionService } from './transaccion.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartamentoIndexComponent,
     DepartamentoCreateComponent,
-    DepartamentoEditComponent
+    DepartamentoEditComponent,
+    CuentaIndexComponent,
+    CuentaEditComponent,
+    CuentaCreateComponent,
+    TransaccionIndexComponent,
+    TransaccionEditComponent,
+    TransaccionCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +39,9 @@ import { DepartamentoService } from './departamento.service';
     FormsModule
   ],
   providers: [
-    DepartamentoService
+    DepartamentoService,
+    CuentaService,
+    TransaccionService
   ],
   bootstrap: [AppComponent]
 })

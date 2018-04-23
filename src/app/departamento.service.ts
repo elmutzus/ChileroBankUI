@@ -8,7 +8,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
-
 const API_URI = environment.apiUrl;
 
 @Injectable()

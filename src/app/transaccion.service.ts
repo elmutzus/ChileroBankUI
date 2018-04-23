@@ -7,6 +7,8 @@ import { Transaccion } from './dto/Transaccion';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
+import { TarjetaCredito } from './dto/TajetaCredito';
+import { TarjetaCreditoResponse } from './dto/TarjetaCreditoResponse';
 
 const API_URI = environment.apiUrl;
 
@@ -34,4 +36,36 @@ export class TransaccionService {
         return Observable.throw(error);
       });
   }
+
+  public payCreditCard(tc: TarjetaCredito) {
+    return this.http.post<Transaccion>(API_URI + '/banking/transacciones/payCard', tc)
+      .map((response: Transaccion) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      });
+  }
+
+  public consumeCreditCard(tc: TarjetaCredito) {
+    return this.http.post<Transaccion>(API_URI + '/banking/transacciones/consumeCard', tc)
+      .map((response: Transaccion) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      });
+  }
+
+  public validateCreditCard(id: number) {
+    return this.http.get<TarjetaCreditoResponse>('http://localhost:8081/tarjeta/api/consultas/validate/' + id)
+      .map((response: TarjetaCreditoResponse) => {
+        return response;
+      })
+      .catch((error) => {
+        return Observable.throw(error);
+      });
+  }
+
+  
 }

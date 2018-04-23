@@ -38,15 +38,7 @@ export class TransaccionIndexComponent implements OnInit {
   btnCancelClick = function() {
     this.goBack();
   }
-
-  btnPayClick = function () {
-    this.goBack();
-  }
-
-  btnConsumeClick = function () {
-    this.goBack();
-  }
-
+  
   goBack = function() {
     this.router.navigateByUrl('/cuenta');
   }

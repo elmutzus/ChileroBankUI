@@ -29,6 +29,10 @@ export class CuentaIndexComponent implements OnInit {
     this.router.navigateByUrl('/cuenta/edit/' + id);
   }
 
+  btnTransactionsClick = function (id: number) {
+    this.router.navigateByUrl('/transaccion/' + id);
+  }
+
   loadAccounts() {
     this.accountService.getAll()
       .subscribe((data: Cuenta[]) => {

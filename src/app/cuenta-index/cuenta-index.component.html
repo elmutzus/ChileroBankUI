@@ -19,14 +19,13 @@
           <td>{{cnt.id}}</td>
           <td>{{cnt.moneda}}</td>
           <td>{{cnt.fechaApertura}}</td>
-          <td>{{cnt.estado}}</td>
+          <td>{{cnt.estado == 1 ? 'Activa' : 'Inactiva'}}</td>
           <td>{{cnt.monto | currency}}</td>
           <td>{{cnt.tipoCuenta.nombre}}</td>
           <td>{{cnt.cliente.nombre}}</td>
           <td>
             <button id="btnEdit" type="submit" class="btn btn-info" (click)="btnEditClick(cnt.id);">Editar</button>
-            <button id="btnEdit" type="submit" class="btn btn-success" (click)="btnEditClick(cnt.id);">Transacciones</button>
-            <button id="btnDelete" type="submit" class="btn btn-danger" (click)="btnDeleteClick(cnt.id);">Eliminar</button>
+            <button id="btnTransactions" type="submit" class="btn btn-success" (click)="btnTransactionsClick(cnt.id);">Transacciones</button>
           </td>
         </tr>
       </tbody>

@@ -14,7 +14,6 @@ import { CuentaIndexComponent } from './cuenta-index/cuenta-index.component';
 import { CuentaEditComponent } from './cuenta-edit/cuenta-edit.component';
 import { CuentaCreateComponent } from './cuenta-create/cuenta-create.component';
 import { TransaccionIndexComponent } from './transaccion-index/transaccion-index.component';
-import { TransaccionEditComponent } from './transaccion-edit/transaccion-edit.component';
 import { TransaccionCreateComponent } from './transaccion-create/transaccion-create.component';
 import { CuentaService } from './cuenta.service';
 import { TransaccionService } from './transaccion.service';
@@ -29,7 +28,6 @@ import { TransaccionService } from './transaccion.service';
     CuentaEditComponent,
     CuentaCreateComponent,
     TransaccionIndexComponent,
-    TransaccionEditComponent,
     TransaccionCreateComponent
   ],
   imports: [

@@ -1,3 +1,42 @@
-<p>
-  transaccion-index works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{title}}
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Fecha movimiento</th>
+        <th>Monto</th>
+        <th>Monto final de la cuenta</th>
+        <th>Operación</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trx of transactions">
+          <td>{{trx.id}}</td>
+          <td>{{trx.fechaMovimiento}}</td>
+          <td>{{trx.monto | currency}}</td>
+          <td>{{trx.montoFinal | currency}}</td>
+          <td>{{trx.operacion.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <button id="btnConsume" type="submit" class="btn btn-primary" (click)="btnConsumeClick();">Consumir tarjeta</button>
+          <button id="btnPay" type="submit" class="btn btn-primary" (click)="btnPayClick();">Pagar tarjeta</button>
+          <button id="btnCreate" type="submit" class="btn btn-primary" (click)="btnCreateClick();">Nueva transacción</button>
+        </div>
+        <div class="pull-left">
+          <button id="btnCancel" type="submit" class="btn btn-danger" (click)="btnCancelClick();">Regresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="message.length > 0">
+  <div class="text-danger">{{ message }}</div>
+</div>

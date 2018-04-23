@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Transaccion } from '../dto/Transaccion';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TransaccionService } from '../transaccion.service';
 
 @Component({
   selector: 'app-transaccion-index',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransaccionIndexComponent implements OnInit {
 
-  constructor() { }
+  title: string = 'Listado de Transacciones';
+  message: string = '';
+  private transactions: Transaccion[];
+
+  accountId: number;
+
+  constructor(private router: Router, private trxService: TransaccionService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.accountId = this.route.snapshot.params.id;
+    this.loadTransactionsPerAccount(this.accountId);
   }
 
+  loadTransactionsPerAccount(accountId: number) {
+    this.trxService.getAllByAccount(accountId)
+      .subscribe((data: Transaccion[]) => {
+        this.transactions = data;
+      });
+  }
+
+
+  btnCreateClick = function () {
+    this.router.navigateByUrl('/cuenta/create');
+  };
+
+  btnCancelClick = function() {
+    this.goBack();
+  }
+
+  goBack = function() {
+    this.router.navigateByUrl('/cuenta');
+  }
 }
